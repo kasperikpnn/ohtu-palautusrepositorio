@@ -35,7 +35,7 @@ class TennisGame:
     
     def score_as_tennis_call(self, score):
         tennis_score_names = ["Love", "Fifteen", "Thirty", "Forty"]
-        if score <= 4:
+        if score < 4:
             return tennis_score_names[score]
         else:
             return "Deuce"
