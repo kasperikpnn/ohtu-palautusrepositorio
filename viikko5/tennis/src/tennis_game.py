@@ -37,7 +37,7 @@ class TennisGame:
         if score < 4:
             return tennis_score_names[score]
         else:
-            return "Deuce"
+            raise ValueError(f"Invalid score for tennis call: {score}")
 
     def get_score(self):
         if self.scores_are_tied():
