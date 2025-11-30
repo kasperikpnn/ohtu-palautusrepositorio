@@ -21,7 +21,7 @@ class TennisGame:
         return self.player1_score >= 3 or self.player2_score >= 3
 
     def non_tied_score_after_four_points(self):
-        score_difference = self.player1_score-self.player2_score
+        score_difference = self.player1_score - self.player2_score
         if score_difference == 1:
             return "Advantage player1"
         elif score_difference == -1:
