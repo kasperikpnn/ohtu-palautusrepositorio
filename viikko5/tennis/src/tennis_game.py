@@ -30,8 +30,7 @@ class TennisGame:
             return "Win for player1"
         elif score_difference <= -2:
             return "Win for player2"
-        else:
-            return "Error"
+        # All possible cases are covered above; this method is only called when scores are not tied.
     
     def score_as_tennis_call(self, score):
         tennis_score_names = ["Love", "Fifteen", "Thirty", "Forty"]
