@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pelitilanne</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { max-width: 720px; padding: 1rem 1.5rem; border: 1px solid #ddd; border-radius: 10px; }
+      .scores { margin: 1rem 0; }
+      .moves { margin: 0.5rem 0; color: #555; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      button { padding: 0.5rem 1rem; }
+      .hint { font-size: 0.9rem; color: #666; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Pelitilanne</h1>
+
+      <div class="scores">
+        <strong>Pisteet:</strong>
+        <div>Eka: {{ scores.ekan }} | Toka: {{ scores.tokan }} | Tasapelit: {{ scores.tasapelit }}</div>
+      </div>
+
+      {% if last_moves %}
+        <div class="moves">Viimeisin kierros: eka = {{ last_moves.first }}, toka = {{ last_moves.second }}</div>
+      {% endif %}
+
+      <p class="hint">Anna siirto: k (kivi), p (paperi) tai s (sakset). Virheellinen siirto lopettaa pelin.</p>
+
+      <form method="post" action="/play">
+        {% if mode == 'a' %}
+          <div class="grid">
+            <div>
+              <label>Ensimmäisen pelaajan siirto</label><br />
+              <input type="text" name="move1" maxlength="1" pattern="[kps]" required />
+            </div>
+            <div>
+              <label>Toisen pelaajan siirto</label><br />
+              <input type="text" name="move2" maxlength="1" pattern="[kps]" required />
+            </div>
+          </div>
+        {% else %}
+          <div>
+            <label>Ensimmäisen pelaajan siirto</label><br />
+            <input type="text" name="move1" maxlength="1" pattern="[kps]" required />
+          </div>
+        {% endif %}
+        <div style="margin-top: 1rem;">
+          <button type="submit">Lähetä siirto</button>
+          <a href="/finish" style="margin-left: 1rem;">Lopeta peli</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

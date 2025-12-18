@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kivi-Paperi-Sakset</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { max-width: 560px; padding: 1rem 1.5rem; border: 1px solid #ddd; border-radius: 10px; }
+      button { padding: 0.5rem 1rem; }
+      fieldset { border: none; padding: 0; margin: 0 0 1rem; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Kivi-Paperi-Sakset</h1>
+      <p>Valitse pelityyppi:</p>
+      <form method="post" action="/start">
+        <fieldset>
+          <label><input type="radio" name="mode" value="a" required /> Ihmistä vastaan</label><br />
+          <label><input type="radio" name="mode" value="b" /> Tekoälyä vastaan</label><br />
+          <label><input type="radio" name="mode" value="c" /> Parannettua tekoälyä vastaan</label>
+        </fieldset>
+        <button type="submit">Aloita peli</button>
+      </form>
+    </div>
+  </body>
+</html>

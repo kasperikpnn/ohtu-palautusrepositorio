@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Peli päättyi</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; }
+      .card { max-width: 560px; padding: 1rem 1.5rem; border: 1px solid #ddd; border-radius: 10px; }
+      a, button { padding: 0.5rem 1rem; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Kiitos!</h1>
+      <p>Lopullinen pelitilanne:</p>
+      <div>
+        Eka: {{ final_scores.ekan }}<br />
+        Toka: {{ final_scores.tokan }}<br />
+        Tasapelit: {{ final_scores.tasapelit }}
+      </div>
+      <p style="margin-top: 1rem;">
+        <a href="/">Palaa valikkoon</a>
+      </p>
+    </div>
+  </body>
+</html>
